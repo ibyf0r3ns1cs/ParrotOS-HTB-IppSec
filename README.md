@@ -2,7 +2,8 @@
 
 This repository contains a comprehensive cheat sheet designed for enthusiasts and professionals working on HackTheBox challenges. Whether you're a beginner or an expert, this cheat sheet will help guide you through various techniques and tools used in penetration testing and ethical hacking.
 
-![HTB Logo](https://tech.eu/2019/04/01/uk-founded-hack-the-box-raises-1-3m-to-build-the-worlds-largest-hacker-community/)
+![HTB Logo](![image](https://github.com/ibyf0r3ns1cs/HTB/assets/50079464/606a7e63-6a28-49c0-b752-8b7d85b714e1)
+)
 
 ## Table of Contents
 
