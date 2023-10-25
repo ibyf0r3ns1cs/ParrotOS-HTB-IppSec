@@ -24,7 +24,7 @@ HackTheBox (HTB) is an online platform allowing you to test and advance your ski
 ## Reconnaissance
 
 - [Nmap basics](nmap.md)
-- [web information gathering](info gathering - web.md)
+- [web information gatherings](info gathering - web.md)
 - ... (Continue with other related tips)
 
 ## Exploitation
