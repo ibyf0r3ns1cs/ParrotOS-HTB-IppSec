@@ -25,18 +25,18 @@ HackTheBox (HTB) is an online platform allowing you to test and advance your ski
 
 - [Nmap basics](nmap.md)
 - [web information gatherings](info_gathering_web.md)
-- ... (Continue with other related tips)
+- [footprinting_services](footprinting_services.md)
 
 ## Exploitation
 
-- Metasploit usage
+- [metasploit](metasploit.md)
 - Manual exploit discovery
 - ... (Continue with other related tips)
 
 ## Post-Exploitation
 
 - [file_transfers](file_transfers.md)
-- Windows enumeration techniques
+- [metasploit](metasploit.md)
 - ... (Continue with other related tips)
 
 ## Privilege Escalation
