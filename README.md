@@ -30,7 +30,7 @@ HackTheBox (HTB) is an online platform allowing you to test and advance your ski
 ## Exploitation
 
 - [metasploit](metasploit.md)
-- Manual exploit discovery
+- [shell_&_payloads](shells_&_payloads.md)
 - ... (Continue with other related tips)
 
 ## Post-Exploitation
