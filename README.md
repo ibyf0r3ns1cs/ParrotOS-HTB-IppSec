@@ -35,7 +35,7 @@ HackTheBox (HTB) is an online platform allowing you to test and advance your ski
 
 ## Post-Exploitation
 
-- Common Linux enumeration scripts
+- [file_transfers](file_transfers.md)
 - Windows enumeration techniques
 - ... (Continue with other related tips)
 
