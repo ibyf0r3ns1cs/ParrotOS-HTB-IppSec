@@ -60,9 +60,9 @@ ansible-playbook main.yml
 ```
 
 ## Customizing tmux
-The tmux_config.conf file in this repository provides a custom configuration for tmux. To use it, copy the file to your home directory and reload your tmux configuration:
+The `.tmux.conf` file in this repository provides a custom configuration for tmux. To use it, copy the file to your home directory and reload your tmux configuration:
 ```sh
-cp tmux_config.conf ~/.tmux.conf
+cp .tmux.conf ~/.tmux.conf
 tmux source-file ~/.tmux.conf
 ```
 
