@@ -1,65 +1,75 @@
-# HackTheBox Cheat Sheet
+# Parrot OS Setup and Customizations
 
-This repository contains a comprehensive cheat sheet designed for enthusiasts and professionals working on HackTheBox challenges. Whether you're a beginner or an expert, this cheat sheet will help guide you through various techniques and tools used in penetration testing and ethical hacking.
+This repository contains setup instructions and configuration files for Parrot OS, including installing Parrot OS, holding kernel packages, installing Ansible, customizing tmux, and fixing issues with VMware Workstation.
 
-![HTB Logo](https://github.com/ibyf0r3ns1cs/HTB/assets/50079464/606a7e63-6a28-49c0-b752-8b7d85b714e1)
+## Installing Parrot OS
 
+Download the Parrot OS ISO from the following link:
+[Parrot OS 5.3 HTB](https://deb.parrot.sh/parrot/iso/5.3/Parrot-htb-5.3_amd64.iso)
 
-## Table of Contents
+## Holding Kernel Packages
 
-1. [Introduction](#introduction)
-2. [Reconnaissance](#reconnaissance)
-3. [Exploitation](#exploitation)
-4. [Post-Exploitation](#post-exploitation)
-5. [Privilege Escalation](#privilege-escalation)
-6. [Tunneling and Pivoting](#tunneling-and-pivoting)
-7. [Miscellaneous Tips](#miscellaneous-tips)
-8. [Contributions](#contributions)
-9. [Disclaimer](#disclaimer)
+To prevent partial updates, use the `apt-mark hold` command to hold back the kernel image and headers packages.
 
-## Introduction
+```sh
+sudo apt-mark hold linux-image-6.1.0-1parrot1-amd64
+sudo apt-mark hold linux-image-amd64
+sudo apt-mark hold linux-headers-6.1.0-1parrot1-amd64
+sudo apt-mark hold linux-headers-6.1.0-1parrot1-common
+sudo apt-mark hold linux-headers-amd64
+```
 
-HackTheBox (HTB) is an online platform allowing you to test and advance your skills in penetration testing and cyber security. This cheat sheet aims to provide a quick reference to tools and techniques that are frequently used in HTB challenges.
+## Updating Package Lists
+Update the package lists to fetch the latest versions of all your packages:
+```sh
+sudo apt update
+```
 
-## Reconnaissance
+## Upgrading the System
+Upgrade the system. The held-back packages should not be upgraded:
+```sh
+sudo apt upgrade
+```
 
-- [nmap basics](nmap.md)
-- [web information gatherings](info_gathering_web.md)
-- [footprinting_services](footprinting_services.md)
-- [metasploit](metasploit.md)
+## Verifying Holds
+After the upgrade, verify that the kernel packages are still on hold:
+```sh
+sudo apt-mark showhold
+```
+You should see the kernel packages you've held back listed here.
 
-## Exploitation
+## Unholding Packages
+In the future, if you decide to update your kernel or need to remove the hold for any other reason, you can unhold the packages with:
+```sh
+sudo apt-mark unhold package_name
+```
 
-- [metasploit](metasploit.md)
-- [shell_&_payloads](shells_&_payloads.md)
-- ... (Continue with other related tips)
+## Installing Ansible 8.0.0
+Install Ansible 8.0.0 using pip:
+```sh
+python3 -m pip install ansible==8.0.0
+```
 
-## Post-Exploitation
+## Cloning IppSec Parrot Build Repository and Installation
+Clone the IppSec Parrot Build repository and run the Ansible playbook to set up your environment:
+```sh
+git clone https://github.com/IppSec/parrot-build.git
+cd parrot-build
+ansible-galaxy install -r requirements.yml
+ansible-playbook main.yml
+```
 
-- [file_transfers](file_transfers.md)
-- [metasploit](metasploit.md)
-- ... (Continue with other related tips)
+## Customizing tmux
+The `.tmux.conf` file in this repository provides a custom configuration for tmux. To use it, copy the file to your home directory and reload your tmux configuration:
+```sh
+cp .tmux.conf ~/.tmux.conf
+tmux source-file ~/.tmux.conf
+```
 
-## Privilege Escalation
+## Fixing VMware Workstation Freezing Issues
+If you experience issues with VMware Workstation freezing on Parrot OS, follow the instructions in `vmware_freeze_fix.md`.
 
-- Kernel exploit discovery
-- Misconfigurations
-- ... (Continue with other related tips)
+### Files
+* `tmux_config.conf`: Custom tmux configuration file.
+* `vmware_freeze_fix.md`: Instructions to fix VMware Workstation freezing issues.
 
-## Tunneling and Pivoting
-
-- SSH tunneling
-- Port forwarding
-- ... (Continue with other related tips)
-
-## Miscellaneous Tips
-
-- Tips related to specific tools or tricks that don't fit into the above categories
-
-## Contributions
-
-If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
-
-## Disclaimer
-
-This cheat sheet is for educational purposes only. Use this knowledge responsibly and ethically. Remember, unauthorized hacking is illegal.
