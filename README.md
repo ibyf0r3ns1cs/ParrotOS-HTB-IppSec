@@ -70,6 +70,6 @@ tmux source-file ~/.tmux.conf
 If you experience issues with VMware Workstation freezing on Parrot OS, follow the instructions in `vmware_freeze_fix.md`.
 
 ### Files
-* `tmux_config.conf`: Custom tmux configuration file.
+* `.tmux.conf`: Custom tmux configuration file.
 * `vmware_freeze_fix.md`: Instructions to fix VMware Workstation freezing issues.
 
