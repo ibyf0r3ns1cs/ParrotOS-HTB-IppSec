@@ -38,57 +38,6 @@ sudo apt-mark showhold
 ```
 You should see the kernel packages you've held back listed here.
 
-
-Certainly! Here are some suggestions for renaming the files for clarity and improving the content explanation in the README.md.
-
-Renamed Repository Structure
-Copy code
-/
-├── README.md
-├── tmux_config.conf
-└── vmware_freeze_fix.md
-Improved README.md
-markdown
-Copy code
-# Parrot OS Setup and Customizations
-
-This repository contains setup instructions and configuration files for Parrot OS, including installing Parrot OS, holding kernel packages, installing Ansible, customizing tmux, and fixing issues with VMware Workstation.
-
-## Installing Parrot OS
-
-Download the Parrot OS ISO from the following link:
-[Parrot OS 5.3 HTB](https://deb.parrot.sh/parrot/iso/5.3/Parrot-htb-5.3_amd64.iso)
-
-## Holding Kernel Packages
-
-To prevent partial updates, use the `apt-mark hold` command to hold back the kernel image and headers packages.
-
-```sh
-sudo apt-mark hold linux-image-6.1.0-1parrot1-amd64
-sudo apt-mark hold linux-image-amd64
-sudo apt-mark hold linux-headers-6.1.0-1parrot1-amd64
-sudo apt-mark hold linux-headers-6.1.0-1parrot1-common
-sudo apt-mark hold linux-headers-amd64
-Updating Package Lists
-Update the package lists to fetch the latest versions of all your packages:
-
-sh
-Copy code
-sudo apt update
-Upgrading the System
-Upgrade the system. The held-back packages should not be upgraded:
-
-sh
-Copy code
-sudo apt upgrade
-Verifying Holds
-After the upgrade, verify that the kernel packages are still on hold:
-
-sh
-Copy code
-sudo apt-mark showhold
-You should see the kernel packages you've held back listed here.
-
 ## Unholding Packages
 In the future, if you decide to update your kernel or need to remove the hold for any other reason, you can unhold the packages with:
 ```sh
