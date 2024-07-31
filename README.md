@@ -66,10 +66,19 @@ cp .tmux.conf ~/.tmux.conf
 tmux source-file ~/.tmux.conf
 ```
 
+## Customizing Bash Prompt
+The `.bashrc` file in this repository provides customizations for your bash prompt, including showing your IP address and adding colorful prompts. To use it, copy the file to your home directory and source it to apply the changes:
+```sh
+cp .bashrc ~/.bashrc
+source ~/.bashrc
+```
+
 ## Fixing VMware Workstation Freezing Issues
 If you experience issues with VMware Workstation freezing on Parrot OS, follow the instructions in `vmware_freeze_fix.md`.
 
+
 ### Files
+* `.bashrc`: Custom bash configuration file.
 * `.tmux.conf`: Custom tmux configuration file.
 * `vmware_freeze_fix.md`: Instructions to fix VMware Workstation freezing issues.
 
